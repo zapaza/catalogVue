@@ -1,0 +1,52 @@
+.field {
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+
+  &__input {
+    appearance: none;
+    background: $formBgColor;
+    box-shadow: 0px 2px 5px rgba($blackColor, 0.1);
+    border-radius: 4px;
+    border: none;
+    padding: 10px 16px 11px;
+    font-size: 12px;
+    line-height: 15px;
+    color: $fontColor;
+    transition: .2s ease-in box-shadow;
+    will-change: box-shadow;
+
+    &::placeholder {
+      font-size: 12px;
+      line-height: 15px;
+      color: $grey500;
+    }
+
+    &:hover {
+      box-shadow: 0px 2px 5px rgba($blackColor, 0.2);
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 108px;
+    }
+
+    &:required + .field__title:after {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $redColor;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    color: $darkLesser;
+  }
+}

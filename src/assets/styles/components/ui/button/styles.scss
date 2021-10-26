@@ -1,0 +1,27 @@
+.button {
+  appearance: none;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: $whiteColor;
+  display: inline-block;
+  width: 100%;
+  background: $buttonColor;
+  box-shadow: 0px 2px 4px rgba($blackColor, 0.1);
+  border-radius: 10px;
+  border: none;
+  padding: 10px 16px 11px;
+  text-align: center;
+  transition: .2s ease-in background;
+  will-change: background;
+
+  &:hover {
+    background:  rgba($buttonColor, 0.9);
+  }
+
+  &[disabled] {
+    background-color: $disabled;
+    color: $grey500;
+    pointer-events: none;
+  }
+}

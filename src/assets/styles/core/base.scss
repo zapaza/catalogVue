@@ -1,0 +1,22 @@
+html {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.wrapper {
+  max-width:  1440px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+
+.header__block {
+  color: $fontColor;
+  margin-bottom: 16px;
+
+  h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+  }
+}

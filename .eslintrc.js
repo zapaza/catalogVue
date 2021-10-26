@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
   root: true,
   env: {
@@ -8,10 +10,14 @@ module.exports = {
     '@vue/airbnb',
   ],
   parserOptions: {
-    parser: 'babel-eslint',
+    ecmaVersion: 2020,
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': isProduction ? 'warn' : 'off',
+    'no-debugger': isProduction ? 'warn' : 'off',
+    'import/prefer-default-export': 'off',
+    'no-void': 'off',
+    'no-return-await': 'off',
+    camelcase: 'off',
   },
 };

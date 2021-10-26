@@ -1,0 +1,12 @@
+{
+  "header.addProduct": "Добавление товара",
+  "form.title.name": "Наименование товара",
+  "form.placeholder.name": "Введите наименование товара",
+  "form.title.caption": "Описание товара",
+  "form.placeholder.caption": "Введите описание товара",
+  "form.title.image": "Ссылка на изображение товара",
+  "form.placeholder.image": "Введите ссылку",
+  "form.title.price": "Цена товара",
+  "form.placeholder.price": "Введите цену",
+  "form.button.addProduct": "Добавить товар"
+}
