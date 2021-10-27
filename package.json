@@ -12,6 +12,7 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
+    "push-dir": "^0.4.1",
     "core-js": "^3.6.5",
     "normalize.scss": "^0.1.0",
     "vue": "^3.0.0",
