@@ -1,7 +1,7 @@
 module.exports = {
-  // publicPath: process.env.NODE_ENV === 'production'
-  //   ? '/scanner-web/'
-  //   : '/',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/catalogVue/'
+    : '/',
 
   css: {
     loaderOptions: {
