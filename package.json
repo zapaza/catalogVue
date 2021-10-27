@@ -1,5 +1,5 @@
 {
-  "name": "ideproject",
+  "name": "catalogVue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "npm run serve",
-    "generate-icons": "create-index ./src/components/ui/icon/src -x js svg -u",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "generate-icons": "create-index ./src/components/ui/icons/src -x js svg -u",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
@@ -36,7 +37,8 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-svg-loader": "^0.17.0-beta.2",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "create-index": "^2.6.0"
   },
   "resolutions": {
     "file-loader": "^6.2.0"

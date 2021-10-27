@@ -1,25 +1,30 @@
 <template>
   <div class="card">
-    <div class="card__button">
-
-    </div>
-    <div class="card__image">
+    <button type="button" class="card__button">
+      <CIcon  name="IconDelete"/>
+    </button>
+    <a href="/" class="card__image">
       <img class="card__image-item"
            :src="imageSrc"
            :title="productName"
            :alt="productName">
-    </div>
+    </a>
     <div class="card__body">
-      <div class="card__title">{{ productName }}</div>
+      <a href="/" class="card__title">{{ productName }}</a>
       <div class="card__caption">{{ productCaption }}</div>
-      <div class="card__price">{{ productPrice }}</div>
+      <div class="card__price">{{ productPrice }} {{ $t('currency') }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import CIcon from '@/components/ui/icons/CIcon.vue';
+
 export default {
   name: 'CProductCard',
+  components: {
+    CIcon,
+  },
   props: {
     imageSrc: {
       type: String,
@@ -31,8 +36,10 @@ export default {
       type: String,
     },
     productPrice: {
-      type: String,
+      type: Number,
     },
   },
 };
 </script>
+
+<style lang="scss" src="@/assets/styles/components/productCard/styles.scss"></style>

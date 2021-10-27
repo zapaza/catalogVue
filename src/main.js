@@ -15,6 +15,6 @@ app
   .mount('#app');
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title ? to.meta.title : 'IdaProject';
+  document.title = to.meta.title ? to.meta.title : 'catalogVue';
   next();
 });

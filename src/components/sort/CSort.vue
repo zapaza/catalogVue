@@ -1,5 +1,5 @@
 <template>
-  <select :name="nameSort" :id="idSort">
+  <select :name="nameSort" :id="idSort" class="sorting">
     <option v-for="(option, index) in options"
             :key="index"
             :value="option.value">

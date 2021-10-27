@@ -8,5 +8,7 @@
   "form.placeholder.image": "Введите ссылку",
   "form.title.price": "Цена товара",
   "form.placeholder.price": "Введите цену",
-  "form.button.addProduct": "Добавить товар"
+  "form.button.addProduct": "Добавить товар",
+  "currency": "руб.",
+  "sorting.option.default": "По умолчанию"
 }

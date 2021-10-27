@@ -5,12 +5,19 @@
               :class="{ 'field__input--textarea': textarea }"
               :name="name"
               :id="id"
-              :placeholder="placeholder"></textarea>
+              :placeholder="placeholder"
+              :value="modelValue"
+              @input="$emit('update:modelValue', $event.target.value)"
+    ></textarea>
     <input v-else class="field__input"
            :id="id"
+           :type="type"
            :name="name"
            :required="required"
-           :placeholder="placeholder"/>
+           :placeholder="placeholder"
+           :value="modelValue"
+           @input="$emit('update:modelValue', $event.target.value)"
+    />
     <span class="field__title">{{ title }}</span>
   </label>
 </template>
@@ -19,6 +26,13 @@
 export default {
   name: 'CField',
   props: {
+    type: {
+      type: String,
+      default: 'text',
+    },
+    modelValue: {
+      type: String,
+    },
     title: {
       type: String,
     },
@@ -38,6 +52,7 @@ export default {
       type: String,
     },
   },
+  emits: ['update:modelValue'],
 };
 </script>
 

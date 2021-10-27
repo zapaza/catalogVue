@@ -9,10 +9,18 @@
       </div>
       <div class="main__products">
         <div class="main__products-sorting">
-          <CSort/>
+          <CSort name-sort="sorting"
+                 id-sort="id-sort"
+                 :options="options"/>
         </div>
         <div class="main__products-list">
-          <CProductCard/>
+          <CProductCard v-for="(product, index) in validCatalog"
+                        :key="index"
+                        :image-src="product.image"
+                        :product-name="product.title"
+                        :product-caption="product.description"
+                        :product-price="product.price"
+          />
         </div>
       </div>
     </div>
@@ -20,9 +28,13 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import CProductCard from '@/components/productCard/CProductCard.vue';
 import CSort from '@/components/sort/CSort.vue';
 import CFormAddProduct from '@/components/formAddProduct/CFormAddProduct.vue';
+import i18n from '../i18n';
+
+const { t } = i18n.global;
 
 export default {
   name: 'Home',
@@ -30,6 +42,22 @@ export default {
     CFormAddProduct,
     CSort,
     CProductCard,
+  },
+  computed: mapGetters(['validCatalog', 'catalogCount']),
+  methods: mapActions(['fetchCatalog']),
+  data() {
+    return {
+      options: [
+        {
+          value: '1',
+          name: t('sorting.option.default'),
+        },
+      ],
+    };
+  },
+  async mounted() {
+    // this.$store.dispatch("fetchPosts");
+    this.fetchCatalog();
   },
 };
 </script>
